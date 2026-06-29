@@ -90,6 +90,7 @@ time {
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 12px;
+  text-align: center;
 }
 
 h1 {
@@ -102,8 +103,8 @@ h1 {
 
 /* Автор */
 article img[alt="Фото автора"] {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   display: inline-block;
   vertical-align: middle;
