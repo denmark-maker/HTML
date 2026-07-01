@@ -1,41 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Blog</title>
-</head>
-<body>
-  <header>
-  <input type="text" placeholder="Поиск" class="search-input">
-  <nav>
-    <ul>
-      <li><a href="#">Мой блог</a></li>
-      <li><a href="#">HTML и CSS</a></li>
-      <li><a href="#">Frontend</a></li>
-      <li><a href="#">Backend</a></li>
-      <li>HTML и CSS</li>
-      <li>Frontend</li>
-      <li>Backend</li>
-    </ul>
-  </nav>
-  </header>
-  <article>
-  <h1>Теория цвета - Как цвет влияет на поведение потребителей</h1>
-  <img src="images/photo.png" alt="Фото Автора статьи">
-  <p>Наталья Васильева <br>Разработчик</p>
-  <img src="images/pc.png" alt="Главная картинка">
-  <p>Теория цвета — это особенности эмоционального восприятия человеком тех или иных цветовых решений. Цвета и различные их комбинации влияют на психику человека, а значит, во многом определяют его поведение. Маркетологи и веб-дизайнеры хорошо знают, что правильно подобранная цветовая гамма сайта помогает привлечь и удержать внимание пользователей, сформировать положительное отношение к продукту, подтолкнуть посетителей к совершению целевых действий, повысить конверсию.</p>
-  <p>
-    Универсального ответа на вопрос, как тот или иной цвет влияет на разных людей, нет. Эмоциональная и поведенческая реакция каждого человека зависит от личного опыта. Вместе с тем можно выделить определенные закономерности влияния цветов на поведение пользователей.
-  </p>
-  <p>
-    В исследовании «Влияние цвета на маркетинг» (Impact of color on marketing) говорится, что использование разных цветов может существенно влиять на настроение и поведение потребителей. Утверждается, что от 60 до 90% покупателей (в зависимости от категории продукта) дают положительную или отрицательную оценку товару, основываясь только на его цвете.
-  </p>
-  </article>
-  <footer>
-  <p>Все права защищены (c) 2024</p>
-  </footer>
-  
-</body>
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.yandex.ru" crossorigin />
+    <link
+      href="https://fonts.yandex.ru/catalog/inter/stylesheet.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1 class="formName">Регистрация</h1>
+
+      <p class="login-link">
+        Уже есть аккаунт?
+        <a href="#" class="enter">Войти</a>
+      </p>
+
+      <form action="#" method="post">
+        <!-- Поле компании -->
+        <div class="form-group">
+          <label for="company" class="visually-hidden">Моя компания</label>
+          <input
+            type="text"
+            name="company"
+            id="company"
+            placeholder="Моя компания"
+            required
+          />
+        </div>
+
+        <!-- Имя и Фамилия в одном контейнере (для размещения в одну строку) -->
+        <div class="name-fields">
+          <div class="form-group">
+            <label for="firstName" class="visually-hidden">Имя</label>
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              placeholder="Имя"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="secondName" class="visually-hidden">Фамилия</label>
+            <input
+              type="text"
+              name="secondName"
+              id="secondName"
+              placeholder="Фамилия"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email" class="visually-hidden">E-mail</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="E-mail"
+            required
+          />
+        </div>
+
+        <!-- Кнопка со стрелочкой (вместо input type="button") -->
+        <button type="submit" class="submit-btn">
+          Зарегистрироваться
+          <img src="./images/arrow.png" alt="" aria-hidden="true" />
+        </button>
+
+        <!-- Чекбокс с label (улучшенная структура) -->
+        <label class="checkbox-label">
+          <input type="checkbox" name="checkbox" id="checkbox" required />
+          <span
+            >Я прочитал и принимаю
+            <a href="#">Условия использования</a>
+          </span>
+        </label>
+      </form>
+    </div>
+  </body>
 </html>
