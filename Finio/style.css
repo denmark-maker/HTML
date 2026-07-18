@@ -1,0 +1,652 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(fonts/Inter/Inter-Regular.otf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(fonts/Inter/Inter-SemiBold.otf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(fonts/Inter/Inter-ExtraBold.otf);
+  font-weight: 800;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  background: #357efe;
+}
+
+.header a:not(.header__logo, .button) {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  transition: 0.2s ease;
+}
+
+.header a:not(.header__logo, .button):hover {
+  color: #fff;
+}
+
+.header__container {
+  padding: 40px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.header__logo {
+  font-weight: 800;
+  color: #fff;
+  font-size: 36px;
+}
+
+.nav__list {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  transition: 0.2 ease;
+  color: #fff;
+}
+
+.button {
+  background-color: #fff;
+  border-radius: 35px;
+  padding: 12px 32px;
+  font-weight: 800;
+  font-size: 17px;
+}
+
+.button--primary {
+  color: #357efe;
+}
+
+/* Hero */
+
+.hero__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper {
+  background-color: #357efe;
+  max-width: 100%;
+  position: relative; /* Чтобы синий фон позиционировался относительно этого блока */
+  width: 100%;
+  background-color: transparent; /* Сам контейнер прозрачный */
+  padding-bottom: 80px; /* Отступ, регулирующий, насколько сильно ноутбук будет заезжать на белый фон */
+  overflow: visible;
+}
+
+.wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #357efe;
+
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+
+  z-index: -1;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.hero__title {
+  color: #fff;
+  font-weight: 800;
+}
+
+.hero__btn {
+  color: #357efe;
+  font-weight: 800;
+  font-size: 17px;
+  transition: 0.2s ease;
+}
+
+.hero__btn:hover {
+  background: #d6d6d6;
+}
+
+.hero__img {
+  max-width: 1040px;
+  max-height: auto;
+}
+
+.hero__features {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.features__list {
+  display: flex;
+  justify-content: space-between;
+  gap: 64px;
+  margin-bottom: 145px;
+}
+
+.features__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.features__text {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.features_img {
+  max-width: 64px;
+  max-height: auto;
+}
+
+.benefits__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+}
+
+.benefits__item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.benefits__header h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.benefits__header p {
+  font-size: 18px;
+  color: #4e5d7c;
+}
+
+.benfits__img {
+  max-width: 640px;
+}
+
+.save-time {
+  background-color: #357efe;
+  padding: 120px 0;
+}
+
+.save-time__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.save-time__title {
+  font-size: 48px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.save-time__desc {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  margin-bottom: 40px;
+  max-width: 1156px;
+  text-align: center;
+}
+
+.button--secondary {
+  margin-bottom: 64px;
+  color: #357efe;
+}
+
+.save-time__img {
+  margin-bottom: 64px;
+}
+
+.save-time__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.list__title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.list__features {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+  font-size: 18px;
+}
+.list__features li {
+  padding-top: 24px;
+}
+
+.list__features li img {
+  position: relative;
+  top: 5px;
+  right: 9px;
+}
+
+.security__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.security {
+  padding-top: 125px;
+}
+
+.security__item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  max-width: 395px;
+}
+
+.security__item .sec__icon {
+  max-width: 80px;
+}
+.security__title {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.security__desc {
+  color: #4e5d7c;
+  opacity: 0.5;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.mobile {
+  padding-top: 160px;
+  padding-bottom: 500px;
+}
+.mobile__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.mobile__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.mobile__title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.mobile__desc {
+  opacity: 0.5;
+  color: #4e5d7c;
+  line-height: 1.4;
+  font-size: 17px;
+}
+
+.mobile__img {
+  margin-bottom: 120px;
+}
+
+.mobile__support {
+  background-color: #357efe;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  align-items: center;
+  max-width: 1400px;
+  position: absolute;
+  left: 500px;
+  border-radius: 15px;
+  padding: 0 95px;
+}
+/* Обнуляем стандартные маркеры и отступы списка */
+.support__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Выстраивает li строго в колонку */
+  gap: 24px; /* Задает одинаковый отступ между строками списка */
+}
+
+/* Настраиваем каждую ссылку внутри списка */
+.support__list a {
+  display: inline-flex; /* Позволяет иконке и тексту встать в один ряд */
+  align-items: center; /* Идеально центрирует текст по вертикали относительно иконки */
+  gap: 20px; /* Отступ между картинкой и текстом */
+  color: #fff; /* Делает текст белым */
+  text-decoration: none; /* Убирает подчеркивание ссылок */
+  font-size: 20px; /* Размер шрифта (настройте под макет) */
+}
+
+/* Стили для самих иконок */
+.icon_2 {
+  width: 40px; /* Задаем фиксированную ширину */
+  height: 40px; /* Задаем фиксированную высоту */
+  display: block; /* Убирает лишние дефолтные отступы снизу у картинок */
+  flex-shrink: 0; /* Запрещает иконке сжиматься */
+}
+
+/* Дополнительные стили для текстов описания (белый цвет, как на макете) */
+.support__desc,
+.support__desc2 {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0; /* Сбрасываем дефолтные маргины браузера */
+}
+
+/* Базовые стили для всей секции */
+.rate {
+  background-color: #f8fafc; /* Светлый фон всей секции для контраста карточек */
+  padding: 100px 0;
+  font-family: sans-serif;
+}
+
+.rate__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Центрированная текстовая шапка */
+.rate__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.rate__title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 16px 0;
+}
+
+.rate__desc {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #64748b;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* Сетка для карточек */
+.rate__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  align-items: stretch; /* Растягивает все карточки по высоте самой высокой */
+}
+
+/* Стили самой карточки */
+.pricing-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px 32px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Выталкивает кнопку строго вниз */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Опционально: выделение центрального/выгодного тарифа */
+.pricing-card--featured {
+  border-color: #357efe;
+  position: relative;
+}
+
+/* Внутренний контейнер для текста и цен */
+.pricing-card__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 12px 0;
+}
+
+.pricing-card__description {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #94a3b8;
+  margin: 0 0 32px 0;
+  min-height: 44px; /* Резервирует место под 2 строки, чтобы сетка цен не прыгала */
+}
+
+/* Сетка со строками цен */
+.pricing-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.info-row:last-child {
+  border-bottom: none; /* Убирает черту перед синей кнопкой */
+}
+
+.info-row__label {
+  font-size: 16px;
+  color: #475569;
+}
+
+.info-row__value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Акцентная синяя кнопка */
+.pricing-card__button {
+  width: 100%;
+  background-color: #357efe;
+  color: #ffffff;
+  border: none;
+  border-radius: 100px; /* Идеальный овал как в макете */
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.pricing-card__button:hover {
+  background-color: #1d63e6;
+}
+
+.review__container h2 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+}
+
+/* Основные стили футера */
+.footer {
+  background-color: #1e2229; /* Темный фон из макета */
+  color: #94a3b8; /* Серый цвет для второстепенного текста */
+  padding: 80px 0 40px 0;
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Сетка для четырех колонок */
+.footer__top {
+  display: grid;
+  /* Автоматически распределяет на 4 равные колонки, на планшетах перестроит в 2 */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Логотип FINIO */
+.footer__logo {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff; /* Белый цвет для логотипа */
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.footer__text {
+  margin: 0;
+  max-width: 240px; /* Ограничиваем ширину текста под логотипом */
+}
+
+/* Списки меню */
+.footer__menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Расстояние между ссылками */
+}
+
+/* Обычные ссылки */
+.footer__link {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__link:hover {
+  color: #ffffff; /* Подсветка белым цветом при наведении */
+}
+
+/* Блок контактов и реквизитов */
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__info p {
+  margin: 0;
+}
+
+/* Ссылки внутри блока контактов (почта и телефон) */
+.footer__link-contact {
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.footer__link-contact:hover {
+  text-decoration: underline;
+}
+
+/* Разделительная линия */
+.footer__divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Тонкая полупрозрачная линия */
+  margin: 60px 0 30px 0;
+}
+
+/* Нижняя панель */
+.footer__bottom {
+  display: flex;
+  justify-content: space-between; /* Копирайт влево, иконки вправо */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer__copyright {
+  margin: 0;
+}
+
+/* Блок с платежными системами */
+.footer__payments {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Расстояние между иконками платежей */
+}
+
+.footer__payment-icon {
+  height: 24px; /* Фиксированная высота для всех иконок платежей */
+  width: auto;
+  opacity: 0.6; /* Делаем их слегка приглушенными, как в макете */
+  object-fit: contain;
+}
