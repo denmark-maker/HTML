@@ -1,0 +1,252 @@
+/* Базовые стили страницы */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- ШРИФТЫ --- */
+/* Обычный текст */
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter/Inter-Regular.otf") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Полужирный для цен */
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter/Inter-SemiBold.otf") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Жирный для заголовков */
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter/Inter-Bold.otf") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* --- ОБЩИЕ СТИЛИ ЗАГОЛОВКОВ --- */
+.title {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 24px;
+  font-family: "Inter", sans-serif;
+}
+
+.subtitle {
+  font-size: 17px;
+  color: #4e5d7c80;
+  line-height: 1.4;
+  margin: 0 0 40px 0;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+/* --- ОСНОВНАЯ СЕТКА ТАРИФОВ (CSS GRID) --- */
+.pricing-grid {
+  display: grid;
+  /* Создаем 3 колонки одинаковой ширины */
+  grid-template-columns: repeat(3, 1fr);
+  /* Отступ между карточками */
+  gap: 24px;
+  /* Растягивает все карточки по высоте до уровня самой высокой */
+  align-items: stretch;
+  /* Центрирует всю сетку на странице и ограничивает максимальную ширину */
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* --- СТАНДАРТНАЯ КАРТОЧКА (CSS GRID) --- */
+.price-card {
+  position: relative; /* Чтобы абсолютный бейдж позиционировался относительно карточки */
+  width: 100%;
+  max-width: 340px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px 30px 30px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+
+  /* Внутренний Grid вместо Flexbox */
+  display: grid;
+  grid-template-columns: 1fr;
+  /* 1fr для .card-details заставит его занять всё свободное место и прижмет кнопку вниз */
+  grid-template-rows: auto 1fr auto;
+  row-gap: 30px; /* Управляет отступами между основными блоками карточки */
+}
+
+/* Шапка карточки */
+.card-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 10px;
+}
+
+.card-title {
+  font-size: 28px;
+  margin: 0;
+  color: #111827;
+}
+
+.card-description {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Блок со списками цен */
+.card-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+}
+
+/* СТРОКА ВНУТРИ ЦЕН (Переведена на CSS Grid) */
+.detail-row {
+  display: grid;
+  /* Первая колонка забирает максимум места (текст слева), вторая сжимается под контент (цена справа) */
+  grid-template-columns: 1fr auto;
+  align-items: center; /* Центрирование по вертикали */
+  font-size: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.detail-row span {
+  color: #4b5563;
+}
+
+.detail-row strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+/* Синяя кнопка */
+.card-btn {
+  width: 100%;
+  background: #3b82f6;
+  color: #ffffff;
+  padding: 14px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.card-btn:hover {
+  background: #2563eb;
+}
+
+/* Зеленый бейдж */
+.badge-green {
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  background: #1abc9c;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* Желтая плашка для цен/скидок */
+.highlight-yellow {
+  background: #fbbf24;
+  color: #111827; /* Темный текст для читаемости на желтом */
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* --- СТИЛИ ДЛЯ МОДИФИКАТОРА (АКЦЕНТНАЯ/СИНЯЯ КАРТОЧКА) --- */
+.card-featured {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.card-featured .card-title {
+  color: #ffffff;
+}
+
+.card-featured .card-description {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card-featured .detail-row {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.card-featured .detail-row span {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card-featured .detail-row strong {
+  color: #ffffff;
+}
+
+.card-featured .highlight-yellow {
+  background: #fbbf24;
+  color: #111827;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.card-featured .card-btn {
+  background: #ffffff;
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+.card-featured .card-btn:hover {
+  background: #f0f4ff;
+}
+
+.card-featured .badge-green {
+  background: #10b981;
+  top: 20px;
+  left: 30px;
+}
+
+/* Дополнительный служебный класс (если используется в разметке) */
+.blue {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 140%;
+  color: #fff;
+}
+
+/* --- АДАПТИВНОСТЬ (МОБИЛЬНЫЕ УСТРОЙСТВА) --- */
+@media (max-width: 768px) {
+  .pricing-grid {
+    /* Переключаем сетку с 3 колонок на 1 колонку */
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px;
+    margin: 20px auto;
+  }
+
+  .price-card {
+    padding: 30px 20px 20px 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 100%; /* Чтобы карточка тянулась во всю ширину экрана смартфона */
+  }
+
+  .card-title {
+    font-size: 24px;
+  }
+}
